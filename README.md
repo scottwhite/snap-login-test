@@ -4,13 +4,13 @@ Get from https://nodejs.org
 
 
 ### selenium web driver (and other dependencies)
-Once node is installed go to the project directory and run
+Once node is installed go to the project directory (where you checked out the project) and run
 ```
 npm install
 ```
 
 ### setup config.js
-In project directory create the config.js
+In project directory create the config.js (same place as README.md) with the following structure (replace <> with real values)
 ```javascript
 module.exports = {
   username:'<test username>',
@@ -25,6 +25,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_t
 
 
 ### run test
+Again in project director, run this command
 ```
 node .
 ```
