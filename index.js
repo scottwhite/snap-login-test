@@ -2,10 +2,16 @@ const { Builder, Actions, By, Key, until } = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 const config = require('./config');
 
+async function closeSession(driver){
+  let menu = await driver.findElement(By.className('page-header__user'))
+  menu.click()
+  let logout = await driver.wait(until.elementLocated(By.className('user-menu-list__item user-menu-list__item--logout')))
+  await driver.wait(until.elementIsVisible(logout))
+  await logout.click()
+}
 
 (async () => {
   const driver = await new Builder().forBrowser('firefox').build()
-  const actions = driver.actions({ async: true })
   try {
     const loginpage = `${config.url}/#/patient`
     await driver.get(loginpage)
@@ -36,6 +42,8 @@ const config = require('./config');
     await btn.click()
     const title = await driver.getTitle()
     console.log(title);
+    await driver.sleep(10000)
+    await closeSession(driver)
   } catch (e) {
     console.log(e)
   } finally {

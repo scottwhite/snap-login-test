@@ -1,3 +1,9 @@
+## Overview
+Test to go to login page
+Login
+Wait 10s
+Click menu and logout
+
 ## Setup
 ### latest nodejs
 Get from https://nodejs.org
