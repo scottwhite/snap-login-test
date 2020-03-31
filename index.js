@@ -19,8 +19,10 @@ const config = require('./config');
 
     //https://www.selenium.dev/selenium/docs/api/javascript/module/selenium-webdriver/index_exports_By.html
     const btn = driver.findElement(By.className(btnclass))
-    await btn.click()
     
+    let btnbind = await btn.getAttribute('data-bind')
+    console.log(btnbind) //just prove we found the button
+    await btn.click()
     const title = await driver.getTitle()
     console.log(title);
 } catch (e) {
