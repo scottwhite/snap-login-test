@@ -20,7 +20,10 @@ module.exports = {
 ```
 
 ### install needed drivers gecko, chrome and setup path
-Read this mozilla doc page
+Read this mozilla doc page, the section 
+#### Setting up Selenium in node
+The number list
+
 https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Your_own_automation_environment
 
 
