@@ -39,6 +39,6 @@ const config = require('./config');
 } catch (e) {
   console.log(e)
 } finally {
-  //driver.quit();
+  driver.quit();
 }
 }) ();
