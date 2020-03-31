@@ -1,11 +1,11 @@
-const { Builder,Actions, By, Key, until } = require('selenium-webdriver');
+const { Builder, Actions, By, Key, until } = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 const config = require('./config');
 
 
 (async () => {
   const driver = await new Builder().forBrowser('firefox').build()
-  const actions = driver.actions({async: true})
+  const actions = driver.actions({ async: true })
   try {
     const loginpage = `${config.url}/#/patient`
     await driver.get(loginpage)
@@ -21,9 +21,9 @@ const config = require('./config');
     await driver.wait(until.elementIsVisible(login))
     await login.clear()
     await login.sendKeys(config.username)
-    
+
     let password = await driver.findElement(By.id('txtloginpassword'))
-    
+
     await password.clear()
     await password.sendKeys(config.password)
     const btnclass = 'landing-box__button button localizejs button__brand'
@@ -36,9 +36,9 @@ const config = require('./config');
     await btn.click()
     const title = await driver.getTitle()
     console.log(title);
-} catch (e) {
-  console.log(e)
-} finally {
-  driver.quit();
-}
-}) ();
+  } catch (e) {
+    console.log(e)
+  } finally {
+    driver.quit();
+  }
+})();
