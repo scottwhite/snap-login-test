@@ -27,6 +27,7 @@ module.exports = {
 
 ### install needed drivers gecko, chrome and setup path
 Read this mozilla doc page, the section 
+Code uses geckodriver (firefox), make sure that's the one installed
 #### Setting up Selenium in node
 The number list
 
